@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="sample.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!-- The following description imports Vue.js -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- In v-model="name", the date set in Vue.js is synchronized with the HTML input element -->
+            Name<input v-model="name">
+            course:<input v-model="course">
+            Duration of study:<input v-model="acceptancePeriod">
+            <br>
+            <!-- select the method to be activated when the button is clicked with button v-on: click = "addStudent",  -->
+            <button v-on:click="addStudent">Add the student you entered</button>
+
+            <ul>
+                <!-- v-for="student in students" here you cut out range of students one by one and assign it to the variable student -->
+                <!-- v-bind:key="student.id" is used to ensure uniqueness of each extracted element -->
+                <li v-for="student in students" v-bind:key="student.id">
+                    <!-- Descriptions written in {{}} can be used to expand the expression of Vue.js data -->
+                    ID {{student.id}} /
+                    Name {{student.name}} /
+                    Course {{student.course}} /
+                    Duration of study {{student.acceptancePeriod}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="sample.js"></script>
+    </body>
+</html>
